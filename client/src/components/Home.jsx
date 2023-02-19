@@ -2,7 +2,6 @@ import React from "react";
 import NavBar from "./NavBar";
 import Form from "./Form";
 import Services from "./Services";
-
 import "./media/style.css";
 import { Grid, Typography } from "@mui/material";
 import {
@@ -13,9 +12,7 @@ import {
 	Coronavirus,
 	Speed,
 } from "@mui/icons-material";
-import socket from "./network/socket";
 function Home(props) {
-	socket.emit("test", "hello");
 	const serviceList = [
 		{
 			description: "We offer exceptionally cheap services as low as $50 per repair!",

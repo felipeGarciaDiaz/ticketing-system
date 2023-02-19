@@ -1,24 +1,9 @@
 import React, { useState } from "react";
 import { Grid, TextField, Button } from "@mui/material";
 function Form(props) {
-	let [sent, setSent] = useState(false);
-	let [data, setData] = useState({
-		firstName: "",
-		lastName: "",
-		email: "",
-		phone: "",
-		request: "",
-	});
-	const handleChange = (event) => {
-		setData({ ...data, [event.target.name]: event.target.value });
-	};
-	const handleSubmit = (event) => {
-		event.preventDefault();
-		fetch("/repair", { method: "POST" });
-	};
 	return (
 		<React.Fragment>
-			<form action='/' method='POST' onSubmit={handleSubmit}>
+			<form action='/repair' method='POST'>
 				<Grid container spacing={2}>
 					<Grid item xs={6}>
 						<TextField
@@ -67,7 +52,7 @@ function Form(props) {
 						/>
 					</Grid>
 					<Grid item xs={12}>
-						<Button id='submit-repair-request' type='submit' variant='contained'>
+						<Button id='submit-repair-request' variant='contained' type='submit'>
 							Submit
 						</Button>
 					</Grid>
